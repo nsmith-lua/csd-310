@@ -28,29 +28,29 @@ for player in players:
 print("\n <<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>")
 
 
-add_player = ("(first_name, last_name, team_id (%s, %s, %s)")
+add = ("(first_name, last_name, team_id (%s, %s, %s)")
     
-player_data = ("The", "Balrog", 1)  
+data = ("The", "Balrog", 1)  
 
-cursor.execute(add_player, player_data)
-
-print("\n <<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>")
-for player in players:
-    print("Player_ID: {}\n First_Name: {}\n Last_Name: {}\n Team_Name: {}\n".format(player[0], player[1], player[2], player[3]))
-print("\n <<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>")
-
-update_player = ("UPDATE player SET team_id = 1, first_name = 'Gollum', last_name = 'Balrog' WHERE first_name = 'The'")
-
-cursor.execute(update_player)
+cursor.execute(add, data)
 
 print("\n <<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>")
 for player in players:
     print("Player_ID: {}\n First_Name: {}\n Last_Name: {}\n Team_Name: {}\n".format(player[0], player[1], player[2], player[3]))
 print("\n <<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>")
 
-delete_player = ("DELETE FROM player WHERE first_name = 'The'")
+update = ("UPDATE player SET team_id = 1, first_name = 'Gollum', last_name = 'Balrog' WHERE first_name = 'The'")
 
-cursor.execute(delete_player)
+cursor.execute(update)
+
+print("\n <<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>")
+for player in players:
+    print("Player_ID: {}\n First_Name: {}\n Last_Name: {}\n Team_Name: {}\n".format(player[0], player[1], player[2], player[3]))
+print("\n <<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>")
+
+delete = ("DELETE FROM player WHERE first_name = 'The'")
+
+cursor.execute(delete)
 print("\n <<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>")
 for player in players:
     print("Player_ID: {}\n First_Name: {}\n Last_Name: {}\n Team_Name: {}\n".format(player[0], player[1], player[2], player[3]))
